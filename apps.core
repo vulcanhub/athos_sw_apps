@@ -1,0 +1,45 @@
+###############################################################################
+# Copyright (C) May 2022, Belmont Computing, Inc. -- All Rights Reserved
+#
+# NOTICE:  All information contained herein is, and remains the property of
+# Belmont Computing, Inc.  The intellectual and technical concepts contained
+# herein are proprietary to Belmont Computing, Inc. and may be covered by U.S.
+# and Foreign Patents, patents in process, and are protected by trade secret
+# or copyright law.  Dissemination of this information or reproduction of this
+# material is strictly forbidden unless prior written permission is obtained
+# from Belmont Computing, Inc.
+###############################################################################
+
+CAPI=2:
+
+name: "bci:athos_sw:apps:1.0"
+description: "Top-level apps and tests."
+
+filesets:
+  files_dif_smoketest:
+    depend:
+      - bci:athos_sw:dif_smoketest:1.0
+  files_tests:
+    depend:
+      - bci:athos_sw:base:1.0
+      - bci:athos_sw:dif:1.0
+      - bci:athos_sw:flash_ctrl:1.0
+      - bci:athos_sw:top:1.0
+    files:
+      - coverage_test.c
+      - crt_test.c
+      - flash_ctrl_test.c
+      - pmp_smoketest_napot.c
+      - pmp_smoketest_tor.c
+      - bubble_sort.c
+      - demos.h: {is_include_file: true}
+      - demos.c
+      - hello_world.c
+    file_type: swCSource
+
+targets:
+  default: 
+    filesets:
+      - files_tests
+      - files_dif_smoketest
+
