@@ -6,12 +6,12 @@
 
 #include <stdbool.h>
 
-#include "arch/device.h"
+#include "dif/device.h"
 #include "dif/dif_gpio.h"
 #include "dif/dif_uart.h"
-#include "runtime/hart.h"
-#include "runtime/log.h"
-#include "testing/check.h"
+#include "dif/hart.h"
+#include "dif/log.h"
+#include "dif/check.h"
 
 void demo_gpio_startup(dif_gpio_t *gpio) {
   LOG_INFO("Watch the LEDs!");
