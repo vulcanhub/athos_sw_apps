@@ -2,16 +2,6 @@
 // Licensed under the Apache License, Version 2.0, see LICENSE for details.
 // SPDX-License-Identifier: Apache-2.0
 
-// #include <stdbool.h>
-// #include <stdint.h>
-// 
-// #include "arch/device.h"
-// #include "runtime/hart.h"
-// #include "runtime/log.h"
-// #include "runtime/print.h"
-// #include "testing/test_coverage.h"
-// #include "testing/test_main.h"
-
 #include <stdbool.h>
 #include <stdint.h>
 

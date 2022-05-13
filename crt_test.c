@@ -2,20 +2,6 @@
 // Licensed under the Apache License, Version 2.0, see LICENSE for details.
 // SPDX-License-Identifier: Apache-2.0
 
-// #include <stddef.h>
-// #include <stdint.h>
-// 
-// #include "arch/device.h"
-// #include "base/memory.h"
-// #include "base/stdasm.h"
-// #include "dif/dif_uart.h"
-// #include "runtime/log.h"
-// #include "runtime/print.h"
-// #include "testing/check.h"
-// #include "testing/test_status.h"
-// 
-// #include "top_athos_sw/sw/autogen/top_athos.h"  // Generated.
-
 #include <stddef.h>
 #include <stdint.h>
 
@@ -28,7 +14,7 @@
 #include "dif/check.h"
 #include "dif/test_status.h"
 
-#include "top_athos_sw/sw/autogen/top_athos.h"  // Generated.
+#include "top/sw/autogen/top_athos.h"  // Generated.
 
 // Symbols defined in sw/device/exts/common/flash_link.ld, which we use to
 // check that the CRT did what it was supposed to.

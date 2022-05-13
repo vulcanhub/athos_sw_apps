@@ -6,7 +6,7 @@
 #include "base/mmio.h"
 
 #include "flash_ctrl/regs/flash_ctrl_regs.h"  // Generated.
-#include "top_athos_sw/sw/autogen/top_athos.h"
+#include "top/sw/autogen/top_athos.h"
 
 #define FLASH_CTRL0_BASE_ADDR TOP_ATHOS_FLASH_CTRL_CORE_BASE_ADDR
 #define PROGRAM_RESOLUTION_WORDS \

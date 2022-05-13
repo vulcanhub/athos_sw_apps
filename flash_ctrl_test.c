@@ -2,14 +2,6 @@
 // Licensed under the Apache License, Version 2.0, see LICENSE for details.
 // SPDX-License-Identifier: Apache-2.0
 
-// #include "flash_ctrl/flash_ctrl.h"
-// 
-// #include "base/memory.h"
-// #include "base/mmio.h"
-// #include "runtime/log.h"
-// #include "testing/check.h"
-// #include "testing/test_main.h"
-
 #include "flash_ctrl/flash_ctrl.h"
 
 #include "base/memory.h"

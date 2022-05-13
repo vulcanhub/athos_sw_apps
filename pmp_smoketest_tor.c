@@ -2,15 +2,6 @@
 // Licensed under the Apache License, Version 2.0, see LICENSE for details.
 // SPDX-License-Identifier: Apache-2.0
 
-// #include "base/csr.h"
-// #include "handler/handler.h"
-// #include "irq/irq.h"
-// #include "runtime/hart.h"
-// #include "runtime/pmp.h"
-// #include "testing/check.h"
-// #include "testing/test_main.h"
-// #include "testing/test_status.h"
-
 #include "base/csr.h"
 #include "dif/handler.h"
 #include "dif/irq.h"

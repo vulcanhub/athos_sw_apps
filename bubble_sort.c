@@ -1,20 +1,10 @@
-
-// #include "dif/dif_uart.h"
-// #include "runtime/log.h"
-// #include "runtime/print.h"
-// #include "testing/check.h"
-// 
-// #include "testing/test_main.h"
-// 
-// #include "top_athos_sw/sw/autogen/top_athos.h" 
-
 #include "dif/dif_uart.h"
 #include "dif/log.h"
 #include "dif/print.h"
 #include "dif/check.h"
 #include "dif/test_main.h"
 
-#include "top_athos_sw/sw/autogen/top_athos.h" 
+#include "top/sw/autogen/top_athos.h" 
 
 const test_config_t kTestConfig;
 static dif_uart_t uart;
