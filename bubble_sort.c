@@ -1,3 +1,6 @@
+// Copyright (C) May 2022, Belmont Computing, Inc. -- All Rights Reserved
+// Licensed under the BCI License. See LICENSE for details.
+
 #include "dif/dif_uart.h"
 #include "dif/log.h"
 #include "dif/print.h"
