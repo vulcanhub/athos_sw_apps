@@ -86,7 +86,7 @@ uint32_t demo_uart_to_uart_and_gpio_echo(dif_uart_t *uart, dif_gpio_t *gpio) {
       if (rcv_char == ((uint8_t) '^')) {
         rv = 1;
       } else {
-        if (rcv_char == ((uint8_t) 'C')) {
+        if ((rv == 1) && (rcv_char == ((uint8_t) 'C'))) {
           rv = 2;
         } else {
           rv = 0;
@@ -95,5 +95,9 @@ uint32_t demo_uart_to_uart_and_gpio_echo(dif_uart_t *uart, dif_gpio_t *gpio) {
     }
   }
 
-  return rv;
+  if (rv == 2) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
