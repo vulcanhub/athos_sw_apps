@@ -62,9 +62,17 @@ bool test_main(void) {
   LOG_INFO("The LEDs show the ASCII code of the last character.");
 
   uint32_t gpio_state = 0;
+  uint32_t stop;
   while (true) {
     usleep(10 * 1000);  // 10 ms
     gpio_state = demo_gpio_to_log_echo(&gpio, gpio_state);
-    demo_uart_to_uart_and_gpio_echo(&uart, &gpio);
+    stop = demo_uart_to_uart_and_gpio_echo(&uart, &gpio);
+    /* BCI MOD: Stop test when receiving '^C'. */
+    if (stop == 2) {
+      LOG_INFO("Received ^C. Exiting Hello World test.");
+      break;
+    }
   }
+
+  return true;
 }

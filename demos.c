@@ -64,7 +64,11 @@ uint32_t demo_gpio_to_log_echo(dif_gpio_t *gpio, uint32_t prev_gpio_state) {
   return gpio_state;
 }
 
-void demo_uart_to_uart_and_gpio_echo(dif_uart_t *uart, dif_gpio_t *gpio) {
+uint32_t demo_uart_to_uart_and_gpio_echo(dif_uart_t *uart, dif_gpio_t *gpio) {
+  /* BCI MOD: Return 2 if receiving '^C'. */
+  uint32_t rv;
+  rv = 0;
+
   while (true) {
     size_t chars_available;
     if (dif_uart_rx_bytes_available(uart, &chars_available) != kDifUartOk ||
@@ -76,5 +80,20 @@ void demo_uart_to_uart_and_gpio_echo(dif_uart_t *uart, dif_gpio_t *gpio) {
     CHECK(dif_uart_bytes_receive(uart, 1, &rcv_char, NULL) == kDifUartOk);
     CHECK(dif_uart_byte_send_polled(uart, rcv_char) == kDifUartOk);
     CHECK(dif_gpio_write_all(gpio, rcv_char << 8) == kDifGpioOk);
+
+    /* BCI MOD: Look for '^C'. */
+    if (rv != 2) {
+      if (rcv_char == ((uint8_t) '^')) {
+        rv = 1;
+      } else {
+        if (rcv_char == ((uint8_t) 'C')) {
+          rv = 2;
+        } else {
+          rv = 0;
+        }
+      }
+    }
   }
+
+  return rv;
 }

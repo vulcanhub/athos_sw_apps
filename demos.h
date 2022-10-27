@@ -4,7 +4,6 @@
 
 // Copyright (C) May 2022, Belmont Computing, Inc. -- All Rights Reserved
 // Licensed under the BCI License. See LICENSE for details.
-
 #ifndef ATHOS_SW_DEVICE_EXAMPLES_DEMOS_H_
 #define ATHOS_SW_DEVICE_EXAMPLES_DEMOS_H_
 
@@ -45,7 +44,9 @@ uint32_t demo_gpio_to_log_echo(dif_gpio_t *gpio, uint32_t prev_gpio_state);
  *
  * @param uart the UART device to actuate.
  * @param gpio the GPIO device to actuate.
+ *
+ * BCI MOD: Returns 2 when receiving '^C'.
  */
-void demo_uart_to_uart_and_gpio_echo(dif_uart_t *uart, dif_gpio_t *gpio);
+uint32_t demo_uart_to_uart_and_gpio_echo(dif_uart_t *uart, dif_gpio_t *gpio);
 
 #endif  // ATHOS_SW_DEVICE_EXAMPLES_DEMOS_H_
